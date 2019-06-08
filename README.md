@@ -7,6 +7,7 @@
 ## Description
 
 The idea is that you can automatically create a table of contents from your markdown text.
+
 PRs/Issues are always welcome.
 
 ## Install
