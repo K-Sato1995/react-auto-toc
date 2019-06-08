@@ -3,3 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.paragraph {
+  border: solid 1px;
+  margin: 100px;
+}

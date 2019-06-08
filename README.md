@@ -12,16 +12,16 @@ npm install --save react-auto-toc
 
 ## Usage
 
+Pass your markdown content as a prop.
+
 ```jsx
 import React, { Component } from 'react'
-
-import MyComponent from 'react-auto-toc'
+import Toc from 'react-auto-toc'
 
 class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
+  render() {
+    const content = '# test \n your markdown Content # test2\n'
+    return <Toc markdownText={content} />
   }
 }
 ```
