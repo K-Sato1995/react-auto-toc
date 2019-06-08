@@ -1,6 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class Toc extends React.Component {
+  static propTypes = {
+    markdownText: PropTypes.string
+  }
   stringReplacer(string, regex, mark) {
     return string.replace(regex, mark)
   }
@@ -32,10 +36,10 @@ export default class Toc extends React.Component {
   }
 
   render() {
-    const text = '# test\nthis is a test man.  ## Test2 \n'
     const regex = /#+\s[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf\w\s!?()]+\n/g
     const codeRegex = /```*([\s\S]+?)```/g
-    const content = this.stringReplacer(text, codeRegex, ' ')
+    console.log(this.props.markdownText)
+    const content = this.stringReplacer(this.props.markdownText, codeRegex, ' ')
     let headers
     if (typeof content === 'string') {
       headers = content.match(regex)

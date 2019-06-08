@@ -1,0 +1,12 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+import.Component.markdownText	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  static propTypes = {$/;"	property	line:5
+stringReplacer	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  stringReplacer(string, regex, mark) {$/;"	function	line:8
+createLink	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  createLink(string) {$/;"	function	line:11
+returnTitle	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  returnTitle(string) {$/;"	function	line:21
+createAnchorLink	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  createAnchorLink(string) {$/;"	function	line:26
+render	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  render() {$/;"	function	line:38

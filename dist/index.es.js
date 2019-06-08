@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -109,10 +110,10 @@ var Toc = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var text = '# test\nthis is a test man.  ## Test2 \n';
       var regex = /#+\s[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf\w\s!?()]+\n/g;
       var codeRegex = /```*([\s\S]+?)```/g;
-      var content = this.stringReplacer(text, codeRegex, ' ');
+      console.log(this.props.markdownText);
+      var content = this.stringReplacer(this.props.markdownText, codeRegex, ' ');
       var headers = void 0;
       if (typeof content === 'string') {
         headers = content.match(regex);
@@ -137,6 +138,10 @@ var Toc = function (_React$Component) {
   }]);
   return Toc;
 }(React.Component);
+
+Toc.propTypes = {
+  markdownText: PropTypes.string
+};
 
 export default Toc;
 //# sourceMappingURL=index.es.js.map

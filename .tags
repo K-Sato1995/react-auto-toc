@@ -1,0 +1,7 @@
+render	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/example/src/App.js	/^  render() {$/;"	function	line:5
+import.Component.markdownText	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  static propTypes = {$/;"	property	line:5
+stringReplacer	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  stringReplacer(string, regex, mark) {$/;"	function	line:8
+createLink	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  createLink(string) {$/;"	function	line:11
+returnTitle	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  returnTitle(string) {$/;"	function	line:21
+createAnchorLink	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  createAnchorLink(string) {$/;"	function	line:26
+render	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  render() {$/;"	function	line:38
