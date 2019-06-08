@@ -3,9 +3,10 @@ import ExampleComponent from "react-auto-toc";
 
 export default class App extends Component {
   render() {
+    const content = "# test \n lslsl # test2\n";
     return (
       <div>
-        <ExampleComponent text="Modern React component module" />
+        <ExampleComponent markdownText={content} />
         <div>
           <h1 id="test">Test</h1>
           <p className="paragraph">
