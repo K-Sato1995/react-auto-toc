@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import ExampleComponent from "react-auto-toc";
+import Toc from "react-auto-toc";
 
 export default class App extends Component {
   render() {
     const content = "# test \n lslsl # test2\n";
     return (
       <div>
-        <ExampleComponent markdownText={content} />
+        <Toc markdownText={content} />
         <div>
           <h1 id="test">Test</h1>
           <p className="paragraph">

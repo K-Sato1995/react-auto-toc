@@ -4,9 +4,7 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-import.Component.markdownText	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  static propTypes = {$/;"	property	line:5
-stringReplacer	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  stringReplacer(string, regex, mark) {$/;"	function	line:8
-createLink	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  createLink(string) {$/;"	function	line:11
-returnTitle	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  returnTitle(string) {$/;"	function	line:21
-createAnchorLink	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  createAnchorLink(string) {$/;"	function	line:26
-render	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/src/index.js	/^  render() {$/;"	function	line:38
+react-auto-toc	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/README.md	/^# react-auto-toc$/;"	function	line:1
+Install	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/README.md	/^## Install$/;"	function	line:7
+Usage	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/README.md	/^## Usage$/;"	function	line:13
+License	/Users/katsuki/WorkSpace/Javascript/react-auto-toc/README.md	/^## License$/;"	function	line:29
