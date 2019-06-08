@@ -2,40 +2,7 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = require('react');
-var React__default = _interopDefault(React);
-var PropTypes = _interopDefault(require('prop-types'));
-
-function styleInject(css, ref) {
-  if ( ref === void 0 ) ref = {};
-  var insertAt = ref.insertAt;
-
-  if (!css || typeof document === 'undefined') { return; }
-
-  var head = document.head || document.getElementsByTagName('head')[0];
-  var style = document.createElement('style');
-  style.type = 'text/css';
-
-  if (insertAt === 'top') {
-    if (head.firstChild) {
-      head.insertBefore(style, head.firstChild);
-    } else {
-      head.appendChild(style);
-    }
-  } else {
-    head.appendChild(style);
-  }
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var css = "/* add css styles here (optional) */\n\n.styles_test__32Qsm {\n  display: inline-block;\n  margin: 2em auto;\n  border: 2px solid #000;\n  font-size: 2em;\n}\n";
-var styles = { "test": "styles_test__32Qsm" };
-styleInject(css);
+var React = _interopDefault(require('react'));
 
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -85,34 +52,95 @@ var possibleConstructorReturn = function (self, call) {
   return call && (typeof call === "object" || typeof call === "function") ? call : self;
 };
 
-var ExampleComponent = function (_Component) {
-  inherits(ExampleComponent, _Component);
+var Toc = function (_React$Component) {
+  inherits(Toc, _React$Component);
 
-  function ExampleComponent() {
-    classCallCheck(this, ExampleComponent);
-    return possibleConstructorReturn(this, (ExampleComponent.__proto__ || Object.getPrototypeOf(ExampleComponent)).apply(this, arguments));
+  function Toc() {
+    classCallCheck(this, Toc);
+    return possibleConstructorReturn(this, (Toc.__proto__ || Object.getPrototypeOf(Toc)).apply(this, arguments));
   }
 
-  createClass(ExampleComponent, [{
+  createClass(Toc, [{
+    key: 'stringReplacer',
+    value: function stringReplacer(string, regex, mark) {
+      return string.replace(regex, mark);
+    }
+  }, {
+    key: 'createLink',
+    value: function createLink(string) {
+      var shapedString = string.toLowerCase().replace(/#+\s/, '#').trimRight();
+      var strArr = shapedString.split(' ');
+      var anchor = strArr.join('-');
+      return this.stringReplacer(anchor, /[?!]/g, '-');
+    }
+  }, {
+    key: 'returnTitle',
+    value: function returnTitle(string) {
+      var link = this.createLink(string);
+      return React.createElement(
+        'a',
+        { href: '' + link },
+        '' + this.stringReplacer(string, /#+/g, '')
+      );
+    }
+  }, {
+    key: 'createAnchorLink',
+    value: function createAnchorLink(string) {
+      if (/^#{1}\s[\s\S]/.test(string)) {
+        return React.createElement(
+          'li',
+          { className: 'header1' },
+          this.returnTitle(string)
+        );
+      } else if (/^#{2}\s[\s\S]/.test(string)) {
+        return React.createElement(
+          'li',
+          { className: 'header2' },
+          this.returnTitle(string)
+        );
+      } else if (/^#{3}\s[\s\S]/.test(string)) {
+        return React.createElement(
+          'li',
+          { className: 'header3' },
+          this.returnTitle(string)
+        );
+      } else {
+        return '';
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var text = this.props.text;
+      var _this2 = this;
 
-
-      return React__default.createElement(
+      var text = '# test\nthis is a test man.  ## Test2 \n';
+      var regex = /#+\s[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf\w\s!?()]+\n/g;
+      var codeRegex = /```*([\s\S]+?)```/g;
+      var content = this.stringReplacer(text, codeRegex, ' ');
+      var headers = void 0;
+      if (typeof content === 'string') {
+        headers = content.match(regex);
+      }
+      var toc = headers.map(function (header) {
+        return React.createElement(
+          'li',
+          null,
+          _this2.createAnchorLink(header)
+        );
+      });
+      return React.createElement(
         'div',
-        { className: styles.test },
-        'Example Component: ',
-        text
+        { className: 'toc' },
+        React.createElement(
+          'ul',
+          { className: 'toc-list' },
+          toc
+        )
       );
     }
   }]);
-  return ExampleComponent;
+  return Toc;
 }(React.Component);
 
-ExampleComponent.propTypes = {
-  text: PropTypes.string
-};
-
-module.exports = ExampleComponent;
+module.exports = Toc;
 //# sourceMappingURL=index.js.map
