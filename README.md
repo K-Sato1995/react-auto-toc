@@ -4,6 +4,11 @@
 
 [![NPM](https://img.shields.io/npm/v/react-auto-toc.svg)](https://www.npmjs.com/package/react-auto-toc) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Description
+
+The idea is that you can automatically create a table of contents from your markdown text.
+PRs/Issues are always welcome.
+
 ## Install
 
 ```bash
