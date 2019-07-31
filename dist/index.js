@@ -116,7 +116,6 @@ var Toc = function (_React$Component) {
 
       var regex = /#+\s[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf\w\s!?()]+\n/g;
       var codeRegex = /```*([\s\S]+?)```/g;
-      console.log(this.props.markdownText);
       var content = this.stringReplacer(this.props.markdownText, codeRegex, ' ');
       var headers = void 0;
       if (typeof content === 'string') {
@@ -131,10 +130,10 @@ var Toc = function (_React$Component) {
       });
       return React.createElement(
         'div',
-        { className: 'toc' },
+        null,
         React.createElement(
           'ul',
-          { className: 'toc-list' },
+          null,
           toc
         )
       );
