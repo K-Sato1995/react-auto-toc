@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 
 export default class Toc extends React.Component {
   static propTypes = {
-    markdownText: PropTypes.string
+    markdownText: PropTypes.string,
+    limit: PropTypes.number
   }
   stringReplacer(string, regex, mark) {
     return string.replace(regex, mark)
@@ -18,9 +19,22 @@ export default class Toc extends React.Component {
     return this.stringReplacer(anchor, /[?!]/g, '-')
   }
 
+  trimString(string, limit) {
+    if (string.length >= limit) {
+      let slicedString = string.slice(0, limit)
+      return `${slicedString}..`
+    }
+    return string
+  }
+
   returnTitle(string) {
     const link = this.createLink(string)
-    return <a href={`${link}`}>{`${this.stringReplacer(string, /#+/g, '')}`}</a>
+    const titleLimit = this.props.limit ? this.props.limit : 50
+    const title = this.trimString(
+      this.stringReplacer(string, /#+/g, ''),
+      titleLimit
+    )
+    return <a href={`${link}`}>{title}}</a>
   }
 
   createAnchorLink(string) {
