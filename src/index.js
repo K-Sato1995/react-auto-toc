@@ -57,9 +57,9 @@ export default class Toc extends React.Component {
     if (typeof content === 'string') {
       headers = content.match(regex)
     }
-    const toc = headers.map(header => {
-      this.createAnchorLink(header)
-    })
+    const toc = headers.map(header => (
+      <span>{this.createAnchorLink(header)}</span>
+    ))
     return (
       <div>
         <ul>{toc}</ul>
