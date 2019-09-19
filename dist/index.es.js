@@ -88,8 +88,7 @@ var Toc = function (_React$Component) {
       return React.createElement(
         'a',
         { href: '' + link },
-        title,
-        '}'
+        title
       );
     }
   }, {
