@@ -34,7 +34,11 @@ export default class Toc extends React.Component {
       this.stringReplacer(string, /#+/g, ''),
       titleLimit
     )
-    return <a href={`${link}`}>{title}</a>
+    return (
+      <a href={`${link}`} className='toc-title'>
+        {title}
+      </a>
+    )
   }
 
   createAnchorLink(string) {
