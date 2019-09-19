@@ -36,7 +36,7 @@ export default class Toc extends React.Component {
   }
 
   render() {
-    const regex = /#+\s[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf\w\s!?()]+\n/g
+    const regex = /#+\s[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf\w\s!?()//]+\n/g
     const codeRegex = /```*([\s\S]+?)```/g
     const content = this.stringReplacer(this.props.markdownText, codeRegex, ' ')
     let headers
