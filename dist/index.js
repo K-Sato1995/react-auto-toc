@@ -134,7 +134,7 @@ var Toc = function (_React$Component) {
       }
       var toc = headers.map(function (header) {
         return React.createElement(
-          'li',
+          'span',
           null,
           _this2.createAnchorLink(header)
         );
