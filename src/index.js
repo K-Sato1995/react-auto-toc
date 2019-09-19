@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 
 export default class Toc extends React.Component {
   static propTypes = {
-    markdownText: PropTypes.string
+    markdownText: PropTypes.string,
+    limit: PropTypes.number
   }
   stringReplacer(string, regex, mark) {
     return string.replace(regex, mark)
@@ -18,9 +19,22 @@ export default class Toc extends React.Component {
     return this.stringReplacer(anchor, /[?!]/g, '-')
   }
 
+  trimString(string, limit) {
+    if (string.length >= limit) {
+      let slicedString = string.slice(0, limit)
+      return `${slicedString}..`
+    }
+    return string
+  }
+
   returnTitle(string) {
     const link = this.createLink(string)
-    return <a href={`${link}`}>{`${this.stringReplacer(string, /#+/g, '')}`}</a>
+    const titleLimit = this.props.limit ? this.props.limit : 50
+    const title = this.trimString(
+      this.stringReplacer(string, /#+/g, ''),
+      titleLimit
+    )
+    return <a href={`${link}`}>{title}}</a>
   }
 
   createAnchorLink(string) {
@@ -36,7 +50,7 @@ export default class Toc extends React.Component {
   }
 
   render() {
-    const regex = /#+\s[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf\w\s!?()]+\n/g
+    const regex = /#+\s[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf\w\s!?()//]+\n/g
     const codeRegex = /```*([\s\S]+?)```/g
     const content = this.stringReplacer(this.props.markdownText, codeRegex, ' ')
     let headers
