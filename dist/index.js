@@ -75,13 +75,25 @@ var Toc = function (_React$Component) {
       return this.stringReplacer(anchor, /[?!]/g, '-');
     }
   }, {
+    key: 'trimString',
+    value: function trimString(string, limit) {
+      if (string.length >= limit) {
+        var slicedString = string.slice(0, limit);
+        return slicedString + '..';
+      }
+      return string;
+    }
+  }, {
     key: 'returnTitle',
     value: function returnTitle(string) {
       var link = this.createLink(string);
+      var titleLimit = this.props.limit ? this.props.limit : 50;
+      var title = this.trimString(this.stringReplacer(string, /#+/g, ''), titleLimit);
       return React.createElement(
         'a',
         { href: '' + link },
-        '' + this.stringReplacer(string, /#+/g, '')
+        title,
+        '}'
       );
     }
   }, {
@@ -114,7 +126,7 @@ var Toc = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var regex = /#+\s[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf\w\s!?()]+\n/g;
+      var regex = /#+\s[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf\w\s!?()//]+\n/g;
       var codeRegex = /```*([\s\S]+?)```/g;
       var content = this.stringReplacer(this.props.markdownText, codeRegex, ' ');
       var headers = void 0;
@@ -143,7 +155,8 @@ var Toc = function (_React$Component) {
 }(React.Component);
 
 Toc.propTypes = {
-  markdownText: PropTypes.string
+  markdownText: PropTypes.string,
+  limit: PropTypes.number
 };
 
 module.exports = Toc;
