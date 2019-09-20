@@ -34,6 +34,12 @@ class Example extends Component {
 
 ![output2](https://user-images.githubusercontent.com/32632542/62246012-b548a900-b41d-11e9-864c-33009a1117d1.gif)
 
+## Custom style
+
+The list(`ul`) has a class called `toc-list` and each item(`li`) has `header1`, `header2` or `header3` as its class. Lastly, every title(`a`) has a class called `toc-title`.
+
+You can add styles to them in your css files.
+
 ## License
 
 MIT © [K-Sato1995](https://github.com/K-Sato1995)
