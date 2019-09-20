@@ -64,10 +64,6 @@ export default class Toc extends React.Component {
     const toc = headers.map(header => (
       <span>{this.createAnchorLink(header)}</span>
     ))
-    return (
-      <div>
-        <ul>{toc}</ul>
-      </div>
-    )
+    return <ul>{toc}</ul>
   }
 }
