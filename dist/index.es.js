@@ -136,13 +136,9 @@ var Toc = function (_React$Component) {
         );
       });
       return React.createElement(
-        'div',
+        'ul',
         null,
-        React.createElement(
-          'ul',
-          null,
-          toc
-        )
+        toc
       );
     }
   }]);
