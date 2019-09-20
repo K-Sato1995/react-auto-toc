@@ -87,7 +87,7 @@ var Toc = function (_React$Component) {
       var title = this.trimString(this.stringReplacer(string, /#+/g, ''), titleLimit);
       return React.createElement(
         'a',
-        { href: '' + link },
+        { href: '' + link, className: 'toc-title' },
         title
       );
     }
